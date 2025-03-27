@@ -107,8 +107,7 @@ public class TgAuth {
             // Convert hex public key to bytes
             byte[] publicKeyBytes = hexToBytes(publicKeyHex);
 
-            // Create Ed25519 public key parameters directly from the raw bytes
-            // This is much simpler with Bouncy Castle than with standard Java crypto
+            // Create Ed25519 public key parameters directly from the raw bytes using bouncy castle
             Ed25519PublicKeyParameters publicKey = new Ed25519PublicKeyParameters(publicKeyBytes, 0);
 
             // Create an Ed25519Signer for verification
